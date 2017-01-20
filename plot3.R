@@ -1,7 +1,11 @@
+rm(list = ls())
 setwd("~/Specialization_DataScience/4_Exploratory/Week1/Assignment/ExData_Plotting1")
-
-source("ReadData.R")
-
+ElectCons <- read.table("household_power_consumption.txt",sep = ";",
+                        skip = 66637,
+                        nrows = 2880)
+names(ElectCons) <- names(read.table("household_power_consumption.txt",sep = ";",
+                                     nrows = 1,
+                                     header = TRUE))
 # Plot3
 # Prepare Day variable to plot 3
 ElectCons$Date <- as.Date(ElectCons$Date,'%d/%m/%Y')
